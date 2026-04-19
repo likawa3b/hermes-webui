@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.101] — 2026-04-19
+
+### Fixed
+- **Agent image URLs rewritten to actual server origin** — when an agent emits a `MEDIA:http://localhost:8787/api/media?path=...` URL, the WebUI now rewrites the `localhost`/`127.0.0.1` host to `window.location.origin` before using it as an `<img>` `src`. This fixes broken images for all remote users (VPN, Docker, deployed servers) who cannot reach the server's localhost address from their browser. (fix #642)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
