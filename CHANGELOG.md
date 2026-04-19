@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.100] — 2026-04-19
+
+### Fixed
+- **`PermissionError` in auth signing key no longer crashes every HTTP request** — `key_file.exists()` in `api/auth.py`'s `_signing_key()` was called *outside* the try/except block. In three-container bind-mount setups where the agent container initialises the state directory under a different UID, `pathlib.Path.exists()` raises `PermissionError`, which escaped up through `is_auth_enabled()` → `check_auth()` and crashed every HTTP request with HTTP 500. Fix: wrap the `exists()` call inside the try block so `PermissionError` (and any other `OSError`) is caught and logged, then falls back to an in-memory key. Added a UID/GID alignment note to `docker-compose.three-container.yml` to prevent the underlying misconfiguration. (PR #625)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
