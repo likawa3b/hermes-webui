@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.103] — 2026-04-19
+
+### Added
+- **Three-container UID/GID alignment guide in README** — new subsection "Running alongside hermes-dashboard (three-container setup)" explains why UIDs must match across containers sharing a bind-mounted volume, documents the variable name asymmetry (`HERMES_UID`/`HERMES_GID` for the agent image vs `WANTED_UID`/`WANTED_GID` for the WebUI image), gives the recommended `.env` setup for standard Linux and NAS/Unraid deployments, provides the one-time `chown` fix for existing installs, and notes that the dashboard volume must be read-write. (Fixes #645)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
