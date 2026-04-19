@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.102] — 2026-04-19
+
+### Fixed
+- **Profile deletion warning now leads with destructive impact** — the confirmation dialog message now reads: "All sessions, config, skills, and memory for this profile will be permanently deleted. This cannot be undone." Updated across all 6 supported locales (en, es, de, zh, zh-Hant, ru). The `focusCancel: true` option was already present in `deleteProfile()`, ensuring the Cancel button receives default focus for safety. (Fixes #637)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
