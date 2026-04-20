@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.97] — 2026-04-20
+
+### Fixed
+- **Windows .env encoding fix** — `write_text()` calls in `api/profiles.py` were missing `encoding='utf-8'`, which could cause failures on Windows systems with non-UTF-8 locale encodings (e.g. cp936/GBK). All `read_text()` and `write_text()` calls in `api/` now explicitly specify `encoding='utf-8'`, per the project coding standard. (PR #741)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
