@@ -1,5 +1,10 @@
 # Hermes Web UI -- Changelog
 
+## [v0.50.97] — 2026-04-20
+
+### Fixed
+- **Kimi K2.5 added to Kimi/Moonshot provider model list** — `kimi-k2.5` was present in `hermes_cli` but missing from the WebUI's `api/config.py` kimi-coding provider, making it unavailable in the model selector. (Fixes #740)
+
 ## [v0.50.96] — 2026-04-19
 
 ### Added
